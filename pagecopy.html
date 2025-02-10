@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy text</title>
+ <link rel="icon" href="https://i.ibb.co/nqdNKX60/image.png" type="image/x-icon">
+</head>
+<body>
+
+<img src="https://i.ibb.co/VYcXYkS1/image.png" style="position: absolute; top: 300px; left: 500px; width: 650px; height: 200px;" alt="Exemplo de Imagem">
+
+ <h1 style="text-align: center";">Etec 2025</h1>
+<p style="text-align: center";">Site da etec 2025!</p>
+<hr>
+<a href="https://sitetec.netlify.app/"  style="text-align: center";">Inicio</a>
+<hr>
+
+<!-- O nome fica em uma posição especifica -->
+<p style="position: absolute; top: 50px; left: 50px;">Texto...</p>
+
+<!-- Botão para copiar e colar -->
+<button type="button" class="copy-link-button" id="button1" data-link="https://www.youtube.com/">
+    <span class="material-icons">copiar</span>
+</button>
+
+<!-- Controlhe botões -->
+
+<style>
+    .copy-link-button {
+        position: absolute;
+    }
+    #button1 {
+        top: 65px;
+        left: 130px;
+    }
+</style>
+
+
+<!-- Script botões -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.copy-link-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const link = button.getAttribute('data-link');
+                navigator.clipboard.writeText(link).then(() => {
+                    alert('Link copiado!');
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>
